@@ -1,0 +1,56 @@
+Internal DevOps Task – 2
+
+Overview: 
+•	Implement two basic, dependent micro services. (Python or Java) 
+•	Deploy the solution on a local container orchestrator. 
+•	Create a diagram and briefly explain how this would be deployed using Continuous Integration / Deployment on a cloud provider.
+
+Test Instructions: 
+•	Please ensure code is well structured, extensible, testable, readable, commented etc. 
+•	You will be provided a new public Github repository with access.
+•	You should start working and submit your solution on provided Github repository from day 1.
+Link: https://github.com/manukoli1986/DevOps-task-2.git
+•	You should provide step by step documentation on how to execute your submission.
+
+Github Access on Local workstation
+1.	Create a new repository on the command line
+•	git init
+•	git add README.md
+•	git commit -m "first commit"
+•	git branch -M main
+•	git remote add origin https://github.com/manukoli1986/DevOps-task-2.git
+•	git push -u origin main
+
+2.	Or Push an existing repository from the command line
+•	git remote add origin https://github.com/manukoli1986/DevOps-task-2.git
+•	git branch -M main
+•	git push -u origin main
+
+
+NOTE: 
+•	You have 2 weeks to complete the task
+•	Please use the given public repository to submit the solution.
+
+
+
+
+
+Part 1
+1. We would like you to create two dockerized micro services (emphasis on the micro) that
+provide a JSON API over HTTP. (Python or Java)
+ 
+For e.g.
+● μ-service-1 should provide a single endpoint at POST /api. When sent data in the format:  { "message":"abcdefg" }
+It should respond with message reversed and a random number, for good measure:              { "message":"gfedcba", "rand": 0.12345678 }
+● Since μ-service-1 is breaking such a sweat generating all those random numbers, it outsources the string reversal to μ-service-2 who also provides a single endpoint. The endpoint POST /reverse implements the following:
+{ "message":"abcdefg" } → { "message":"gfedcba" }
+
+
+Part 2
+1.	Setup EKS cluster with fargate profile or Managed node using Terraform code on AWS cloud
+2.	Create Jenkins CICD pipeline to Build the code, ECR to store dockerized images and Deploy the microservice on EKS Cluster
+3.	Use Helm charts to deploy application on EKS cluster
+
+Part 3
+1. Produce a system diagram and a brief description of how you would deploy the solution on a cloud provider such as AWS or GCP.
+2. Explain how you would integrate CI/CD to perform deployments, and how you would ensure downtime was avoided?
